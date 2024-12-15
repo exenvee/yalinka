@@ -1,0 +1,86 @@
+// Змінні
+$primary-color: #2c3e50;
+$secondary-color: #e74c3c;
+$background-color: #ecf0f1;
+$text-color: #34495e;
+$font-family: 'Arial', sans-serif;
+
+// Міксини
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Загальні стилі
+body {
+    background-color: $background-color;
+    font-family: $font-family;
+    @include flex-center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+// Блок card
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+
+    &__header {
+        background-color: $primary-color;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    &__content {
+        padding: 20px;
+    }
+
+    &__image {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
+
+    &__text {
+        color: $text-color;
+        text-align: center;
+        margin: 0;
+    }
+
+    &__footer {
+        padding: 20px;
+        text-align: center;
+    }
+
+    &__button {
+        background-color: $secondary-color;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+        }
+    }
+}
+
